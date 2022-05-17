@@ -1,0 +1,1 @@
+[{"model": "training.exercisetype", "pk": 1, "fields": {"name": "Pull-Ups"}}, {"model": "training.exercisetype", "pk": 2, "fields": {"name": "Push-Ups"}}, {"model": "training.exercisetype", "pk": 3, "fields": {"name": "Squats"}}, {"model": "training.exercisetype", "pk": 4, "fields": {"name": "Run"}}
