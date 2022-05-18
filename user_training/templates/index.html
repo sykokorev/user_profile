@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ user }} workouts</title>
+</head>
+<body>
+    <h2>User: {{ user }}</h2>
+    <h3>Your workouts</h3>
+    {% for training in trainings %}
+    <p><a href="{{training.training_id}}">{{ training.training }}</a></p>
+    {% endfor %}
+    <h3>Your parameters: {{weight}} kg, {{height}} m</h3>
+</body>
+</html>

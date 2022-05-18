@@ -37,12 +37,11 @@ class Equipment(models.Model):
 
 class Exercise(models.Model):
 
-    LEVEL = [
-        (0, 'Beginner'),
-        (1, 'Intermediate'),
-        (2, 'Upper-Intermediate'),
-        (3, 'Advanced')
-    ]
+    class Level(models.IntegerChoices):
+        BEGINNER = 0, 'Beginner'
+        INTERMEDIATE = 1, 'Intermediate'
+        UPPER_INTERMEDIATE = 2, 'Upper-Intermediate'
+        ADVANCED = 3, 'Advanced'
 
     name = models.CharField(
         verbose_name='Exercise',
@@ -52,7 +51,7 @@ class Exercise(models.Model):
     )
     level = models.SmallIntegerField(
         verbose_name='Exercise Level',
-        choices=LEVEL,
+        choices=Level.choices,
         default=0
     )
     ex_type = models.ForeignKey(
@@ -63,11 +62,10 @@ class Exercise(models.Model):
     equipment = models.ManyToManyField(
         'Equipment',
         verbose_name='Equipment Needed',
-        null=True
     )
 
     class Meta:
         ordering = ('name', 'level')
 
     def __str__(self):
-        return f'{self.name} - {self.level}'
+        return f'Exercise - {self.name}. Level - {self.Level(self.level).label}'

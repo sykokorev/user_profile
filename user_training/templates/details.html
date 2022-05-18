@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ training }}</title>
+</head>
+<body>
+    {% for exercise in exercises %}
+    <p><a href="/{{exercise.id}}">Exercises: {{ exercise.name }}</a></p>
+    {% endfor %}
+</body>
+</html>

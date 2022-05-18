@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+</head>
+<body>
+<style>
+    h5{
+        color: red;
+    }
+</style>
+{% for message in messages %}
+    <h5>{{ message }}</h5>
+{% endfor %}
+
+    <form method="POST" action="register">
+        {% csrf_token %}
+        <p>User name:</p>
+        <input type='text' name="username" />
+        <p>Email:</p>
+        <input type="email" name="email" />
+        <p>Password:</p>
+        <input type="password" name="password" />
+        <p>Repeat password:</p>
+        <input type="password" name="password_repeat" />
+        <br><input type="submit" />
+    </form>
+</body>
+</html>
