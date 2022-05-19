@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Equipments</title>
+</head>
+<body>
+
+    <ul>
+        {% for equipment in equipments %}
+            {% if equipment.equipment != 'None' %}
+        <li><a href="{{ equipment.equipment }}">{{ equipment.equipment }}</a></li>
+            {% endif %}
+        {% endfor %}
+    </ul>
+
+</body>
+</html>

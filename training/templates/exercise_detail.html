@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ exercise.name }}</title>
+</head>
+<body>
+    <h3>{{ exercise }}</h3>
+    <h4>Level: {{ level }}, type: {{ type }}</h4>
+
+    <p><b>Description:</b> {% if exercise.description %}
+            {{ exercise.description }}<br/>
+        {% else %}
+            No description<br/>
+        {% endif %}
+        <b>Equipments:</b>
+        {% for equipment in equipments %}
+            {% if equipment.name != 'None' %}
+        <a href="equipments/{{equipment.name}}">{{equipment.name}}</a>,
+            {% else %}
+                No equipments needed
+            {% endif %}
+        {% endfor %}
+    </p>
+</body>
+</html>
